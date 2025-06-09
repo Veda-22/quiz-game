@@ -1,0 +1,47 @@
+def run_quiz(questions):
+    score = 0
+    for q in questions:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
+        answer = input("Enter your answer (A/B/C/D): ").strip().upper()
+        if answer == q["answer"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer is {q['answer']}")
+    print(f"\n🎉 You got {score} out of {len(questions)} correct.")
+
+# List of questions
+quiz_questions = [
+    {
+        "question": "1. What is the capital of France?",
+        "options": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"],
+        "answer": "C"
+    },
+    {
+        "question": "2. Who wrote 'Harry Potter'?",
+        "options": ["A. J.R.R. Tolkien", "B. J.K. Rowling", "C. Mark Twain", "D. Charles Dickens"],
+        "answer": "B"
+    },
+    {
+        "question": "3. What is the smallest prime number?",
+        "options": ["A. 1", "B. 2", "C. 3", "D. 0"],
+        "answer": "B"
+    },
+    {
+        "question": "4. What is the chemical symbol for water?",
+        "options": ["A. CO2", "B. H2O", "C. O2", "D. HO"],
+        "answer": "B"
+    },
+    {
+        "question": "5. Which planet is known as the Red Planet?",
+        "options": ["A. Mars", "B. Venus", "C. Jupiter", "D. Mercury"],
+        "answer": "A"
+    },
+]
+
+# Start the quiz
+if __name__ == "__main__":
+    print("🧠 Welcome to the Quiz Game!")
+    run_quiz(quiz_questions)
